@@ -10,11 +10,15 @@ To get started with the Network Scanner, follow these steps:
     ```bash
     git clone https://github.com/Krimoo20/networkScanner.git
     ```
-
-2. **Navigate to the project directory:**
+    
+2. **Install the requirements:**
 
     ```bash
-    cd networkScanner
+    pip install -r requirements.txt
     ```
+3. **Navigate to the project directory::**
 
+    ```bash
+   cd networkScanner
+    ```
 
