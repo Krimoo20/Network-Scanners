@@ -11,15 +11,24 @@ scan = input("""\n Please enter the type of scan you want to run
                    3) Comprehensive Scan\n""")
 if (scan == "1"):
     print("Nmap version: ",scanner.nmap_version())
-    scanner.scan(ip_adresse,"1-1024","-v sS");
+    scanner.scan(ip_adresse,"1-1024","-v sS")
     print(scanner.scaninfo())
     print("IP status:",scanner[ip_adresse].state())
     print(scanner[ip_adresse].all_protocols())
     print("Open Ports", scanner[ip_adresse]["tcp"].keys())
 elif (scan == "2"):
     print("Nmap version: ", scanner.nmap_version())
-    scanner.scan(ip_adresse, "1-1024", "-v sU");
+    scanner.scan(ip_adresse, "1-1024", "-v sU")
     print(scanner.scaninfo())
     print("IP status:", scanner[ip_adresse].state())
     print(scanner[ip_adresse].all_protocols())
     print("Open Ports", scanner[ip_adresse]["udp"].keys())
+elif (scan == "3"):
+    print("Nmap version: ", scanner.nmap_version())
+    scanner.scan(ip_adresse, "1-1024", "-v sS -sV -sC -A -O")
+    print(scanner.scaninfo())
+    print("IP status:", scanner[ip_adresse].state())
+    print(scanner[ip_adresse].all_protocols())
+    print("Open Ports", scanner[ip_adresse]["udp"].keys())
+else:
+    print("Please enter an appropriate option !!")
